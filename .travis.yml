@@ -10,7 +10,7 @@ before_install:
 - echo -e "Host $DEPLOY_IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
   - npm prune --production  # 删除devDependencies
-  - tar czvf indoor-server.tar.bz2 *    # 打包并压缩代码
+  - tar czvf indoor-server.tar.gz *    # 打包并压缩代码
   - scp indoor-server.tar.bz2 root@$DEPLOY_IP:~/github  # 复制到生产服务器上
-  - ssh root@$DEPLOY_IP 'mkdir -p ~/github/indoor-server && tar -zvxf ~/github/indoor-server.tar.bz2 -C ~/github/indoor-server'   # 解压
+  - ssh root@$DEPLOY_IP 'mkdir -p ~/github/indoor-server && tar -zvxf ~/github/indoor-server.tar.gz -C ~/github/indoor-server'   # 解压
   - ssh root@$DEPLOY_IP 'cd ~/github/indoor-server '  
