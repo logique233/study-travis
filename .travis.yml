@@ -12,5 +12,5 @@ after_success:
   - npm prune --production  # 删除devDependencies
   - tar -jcf indoor-server.tar.bz2 *    # 打包并压缩代码
   - scp indoor-server.tar.bz2 root@$DEPLOY_IP:~/github  # 复制到生产服务器上
-  - ssh root@$DEPLOY_IP 'mkdir -p /github/indoor-server && tar -jxf indoor-server.tar.bz2 -C indoor-server'   # 解压
-  - ssh root@$DEPLOY_IP 'cd /github/indoor-server '  
+  - ssh root@$DEPLOY_IP 'mkdir -p ~/github/indoor-server && tar -jxf indoor-server.tar.bz2 -C indoor-server'   # 解压
+  - ssh root@$DEPLOY_IP 'cd ~/github/indoor-server '  
