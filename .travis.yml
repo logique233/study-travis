@@ -3,3 +3,5 @@ node_js:
  - "node"
  - "10"
  - "9"
+after_success:
+  - codecov 
