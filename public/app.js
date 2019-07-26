@@ -1,6 +1,6 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello World! Your first Vue.js Application on Digital Garage'
+        message: '第一次尝试'
     }
 });
