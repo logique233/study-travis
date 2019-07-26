@@ -1,16 +1,13 @@
 language: node_js
 node_js:
-- node
 - '10'
-- '9'
 before_install:
 - openssl aes-256-cbc -K $encrypted_02901aa5e03d_key -iv $encrypted_02901aa5e03d_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host $DEPLOY_IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
-  - npm prune --production  # 删除devDependencies
-  - tar -zvcf indoor-server.tar.gz *    # 打包并压缩代码
-  - scp indoor-server.tar.gz root@$DEPLOY_IP:~/github  # 复制到生产服务器上
-  - ssh root@$DEPLOY_IP 'mkdir -p ~/github/indoor-server && tar -zvxf ~/github/indoor-server.tar.gz -C ~/github/indoor-server'   # 解压
-  - ssh root@$DEPLOY_IP 'cd ~/github/indoor-server '  
+  - npm prune --production  # 鍒犻櫎devDependencies
+  - docker build -t node-web
+  - docker login -u $DOCKER-ID -p $DOCKER-PASS
+  - docker push node-web
