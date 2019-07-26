@@ -9,5 +9,5 @@ before_install:
 after_success:
   - npm prune --production  # 删除devDependencies
   - docker build -t logicrain/node-web
-  - docker login -u $DOCKER-ID -p $DOCKER-PASS
+  - docker login -u $DOCKER_ID -p $DOCKER_PASS
   - docker push logicrain/node-web
