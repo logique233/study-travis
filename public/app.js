@@ -1,6 +1,6 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: '第3次尝试'
+        message: '第4次尝试'
     }
 });
