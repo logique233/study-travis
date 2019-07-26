@@ -11,5 +11,5 @@ after_success:
   - docker build -t $DOCKER_ID/node-web .
   - docker login -u $DOCKER_ID -p $DOCKER_PASS
   - docker push $DOCKER_ID/node-web
-  - ssh root@$DEPLOY_IP 'docker pull $DOCKER_ID/node-web '
-  - ssh root@$DEPLOY_IP 'docker run -d -p 80:8080 $DOCKER_ID/node-web'
+  - ssh root@$DEPLOY_IP 'docker pull logicrain/node-web '
+  - ssh root@$DEPLOY_IP 'docker run -d -p 80:8080 logicrain/node-web'
