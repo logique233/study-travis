@@ -1,67 +1,76 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>尝试</title>
-<style type="text/css">
-@-webkit-keyframes animate-cloud {
-                from {
-                    background-position: 600px 100%;
-                }
-                to {
-                    background-position: 0 100%;
-                }
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>尝试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+        @-webkit-keyframes animate-cloud {
+            from {
+                background-position: 600px 100%;
             }
- 
-            @-moz-keyframes animate-cloud {
-                from {
-                    background-position: 600px 100%;
-                }
-                to {
-                    background-position: 0 100%;
-                }
+
+            to {
+                background-position: 0 100%;
             }
- 
-            @-ms-keyframes animate-cloud {
-                from {
-                    background-position: 600px 100%;
-                }
-                to {
-                    background-position: 0 100%;
-                }
+        }
+
+        @-moz-keyframes animate-cloud {
+            from {
+                background-position: 600px 100%;
             }
- 
-            @-o-keyframes animate-cloud {
-                from {
-                    background-position: 600px 100%;
-                }
-                to {
-                    background-position: 0 100%;
-                }
+
+            to {
+                background-position: 0 100%;
             }
- 
-            html {
-                height: 100%;
+        }
+
+        @-ms-keyframes animate-cloud {
+            from {
+                background-position: 600px 100%;
             }
- 
-            body {
-                background: url(bg_cloud.jpg) 0 bottom repeat-x #049ec4;
-                -webkit-animation: animate-cloud 20s linear infinite;
-                -moz-animation: animate-cloud 20s linear infinite;
-                -ms-animation: animate-cloud 20s linear infinite;
-                -o-animation: animate-cloud 20s linear infinite;
-                animation: animate-cloud 20s linear infinite;
-                width: 100%;
-                height: auto;
+
+            to {
+                background-position: 0 100%;
             }
-</style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+        }
+
+        @-o-keyframes animate-cloud {
+            from {
+                background-position: 600px 100%;
+            }
+
+            to {
+                background-position: 0 100%;
+            }
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: url(bg_cloud.jpg) 0 bottom repeat-x #049ec4;
+            -webkit-animation: animate-cloud 20s linear infinite;
+            -moz-animation: animate-cloud 20s linear infinite;
+            -ms-animation: animate-cloud 20s linear infinite;
+            -o-animation: animate-cloud 20s linear infinite;
+            animation: animate-cloud 20s linear infinite;
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
+
 <body ng-app="helloWorld" ng-controller="MainCtrl">
     <div id="app">
         <h1>{{ message }} </h1>
     </div>
-<script src="app.js"></script>
+    
 </body>
+
 </html>
