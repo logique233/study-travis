@@ -8,7 +8,7 @@ before_install:
 - echo -e "Host $DEPLOY_IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_success:
   - npm prune --production  # 删除devDependencies
-  - docker build -t $DOCKER_ID/node-web .
+  - docker build -t $DOCKER_ID/node-web:$TRAVIS_JOB_NUMBER .
   - docker login -u $DOCKER_ID -p $DOCKER_PASS
   - docker push $DOCKER_ID/node-web
   - ssh root@$DEPLOY_IP 'docker pull logicrain/node-web '
